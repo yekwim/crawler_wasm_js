@@ -1,0 +1,34 @@
+🔧 COMANDOS PARA RESOLVER ARQUIVOS GRANDES NO GIT
+
+Execute estes comandos no terminal WSL/Ubuntu:
+
+1. Navegar para o projeto:
+   cd /home/yekwim/documentos/crawler_wasm_js
+
+2. Remover arquivos grandes do Git:
+   git rm -r --cached analysis_output/
+   git rm -r --cached downloads/ 2>/dev/null || true
+   git rm -r --cached deobfuscation_output/ 2>/dev/null || true
+   git rm -r --cached lixo/ 2>/dev/null || true
+
+3. Adicionar mudanças:
+   git add .gitignore
+
+4. Fazer commit:
+   git commit -m "Remove large output files from Git tracking"
+
+5. Fazer push:
+   git push -u origin main
+
+RESULTADO ESPERADO:
+✅ Arquivos removidos do Git (mas mantidos no disco)
+✅ Push bem-sucedido para o GitHub
+✅ Repositório criado sem erros de tamanho
+
+ALTERNATIVA - Scripts criados:
+- fix_git_large_files.sh (Linux/WSL)
+- fix_git_large_files.bat (Windows)
+- fix_git.js (Node.js)
+- fix_git_large_files.ps1 (PowerShell)
+
+Execute qualquer um deles no terminal apropriado.

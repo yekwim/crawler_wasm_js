@@ -1,0 +1,2 @@
+*.json filter=lfs diff=lfs merge=lfs -text
+analysis_output/tribunal_analysis/analysis_results.json filter=lfs diff=lfs merge=lfs -text
