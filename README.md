@@ -21,20 +21,14 @@ crawler/
 │   │   ├── analyze_and_normalize.js
 │   │   └── enhanced_parser.js
 │   └── index.js                 # Índice principal
-├── tests/                       # Testes
-│   ├── test_integrated_pipeline.js
-│   ├── test_ast_pipeline.js
-│   └── test_*.js
 ├── docs/                        # Documentação
 │   ├── README.md
 │   ├── INTEGRATED_PIPELINE_README.md
 │   ├── PIPELINE_DOCUMENTATION.md
 │   └── WASM_PIPELINE_DOCUMENTATION.md
-├── examples/                    # Exemplos e scripts
-│   └── run_test.sh
-├── crawler.js                   # Crawler principal
 ├── downloads/                   # Ficheiros baixados
 ├── analysis_output/             # Resultados de análise
+├── deobfuscation_output/        # Resultados de desobfucação
 └── package.json
 ```
 
@@ -220,3 +214,4 @@ Para problemas ou dúvidas:
 
 **Versão**: 2.0.0  
 **Última atualização**: Setembro 2024
+
