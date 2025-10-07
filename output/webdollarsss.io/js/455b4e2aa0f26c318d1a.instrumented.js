@@ -1,0 +1,382 @@
+window.__instrumentation__ = {
+    capturedCalls: [],
+    performanceMetrics: new Map(),
+    capture: function (type, callId, timestamp) {
+        this.capturedCalls.push({
+            type: type,
+            id: callId,
+            timestamp: timestamp,
+            performanceTime: performance.now()
+        });
+        if (!this.performanceMetrics.has(type)) {
+            this.performanceMetrics.set(type, []);
+        }
+        this.performanceMetrics.get(type).push(performance.now());
+        console.log(`[INSTRUMENTATION] ${ type } call captured: ${ callId }`);
+    },
+    getMetrics: function () {
+        const metrics = {};
+        for (const [type, times] of this.performanceMetrics) {
+            metrics[type] = {
+                count: times.length,
+                avgTime: times.reduce((a, b) => a + b, 0) / times.length,
+                minTime: Math.min(...times),
+                maxTime: Math.max(...times)
+            };
+        }
+        return metrics;
+    },
+    getCapturedCalls: function () {
+        return this.capturedCalls;
+    }
+};
+'use strict';
+(self.webpackChunk_webdollar_front_webdollar = self.webpackChunk_webdollar_front_webdollar || []).push([
+    [102],
+    {
+        6983: function (e, t, a) {
+            a.r(t), a.d(t, {
+                default: function () {
+                    return o;
+                }
+            });
+            var i = a(6680), n = a(1900), r = (0, n.Z)({}, function () {
+                    var e = this, t = e.$createElement, a = e._self._c || t;
+                    return a('div', {
+                        staticClass: 'backgroundSection',
+                        attrs: { id: 'knowUsSection' }
+                    }, [
+                        a('h1', { staticClass: 'alignCenter' }, [e._v(e._s(e.$i18n.t('heroes.media.media')))]),
+                        e._v(' '),
+                        a('div', { attrs: { id: 'mediaContainer' } }, [
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.youtube.com/watch?v=AO67T4jip3k',
+                                        title: e.$i18n.t('heroes.media.wedollarPresentationInSaudiArabia'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.alexandruBudisteanuSaudiArabia'),
+                                            title: e.$i18n.t('heroes.media.alexandruBudisteanuSaudiArabia'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-budisteanu-human-machine-future.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.wedollarPresentationInSaudiArabia')))]),
+                                    e._v(' '),
+                                    a('span', [e._v(e._s(e.$i18n.t('heroes.media.humanMachineFuture')))])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://web.ep.streamovations.be/index.php/event/stream/20180602-1200-eye22',
+                                        title: e.$i18n.t('heroes.media.technologySummitInStrasbourg'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarEUParliamentBudisteanu'),
+                                            title: e.$i18n.t('heroes.media.webDollarEUParliamentBudisteanu'),
+                                            src: '/public/assets/images/media/WebDollar-Eu-Parliament.jpeg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.technologySummitInStrasbourg')))]),
+                                    e._v(' '),
+                                    a('span', [e._v(e._s(e.$i18n.t('heroes.media.ueParliament')))])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.facebook.com/webdollar.io/videos/131800187541413/',
+                                        rel: 'noopener',
+                                        title: e.$i18n.t('heroes.media.cryptoEventPresentation'),
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarOmegaCryptoPresentation'),
+                                            title: e.$i18n.t('heroes.media.webDollarOmegaCryptoPresentation'),
+                                            src: '/public/assets/images/media/omega.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.technologyPresentation')))]),
+                                    e._v(' '),
+                                    a('span', [e._v(e._s(e.$i18n.t('heroes.media.omegaCrypto')))])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.youtube.com/watch?v=6YAEtqtL_So',
+                                        title: e.$i18n.t('heroes.media.webDollarAwardWinningPresentation'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarAlexandruBudisteanu'),
+                                            title: e.$i18n.t('heroes.media.webDollarAlexandruBudisteanu'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-budisteanu-d10e.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.webDollarAwardWinningPresentation')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('d10e')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.digi24.ro/stiri/sci-tech/lumea-digitala/prima-moneda-virtuala-romaneasca-860158',
+                                        title: e.$i18n.t('heroes.media.founderOfTheRomanianCryptocurrency'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarAlexandruPanait'),
+                                            title: e.$i18n.t('heroes.media.webDollarAlexandruPanait'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-panait-digi24.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.firstRomanianCryptocurrencyInterview')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Digi 24 TV')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.startupcafe.ro/idei-si-antreprenori/bitcoin-romanesc-webdollar-castigi-bani-pierzi-timp-net.htm',
+                                        title: e.$i18n.t('heroes.media.developersTeam'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarTeamAlexandruPanaitCosminOpreaAdrianStratulat'),
+                                            title: e.$i18n.t('heroes.media.webDollarTeamAlexandruPanaitCosminOpreaAdrianStratulat'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-panait-adrian-stratulat-oprea-cosmin.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.webDollarConceptInterview')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Startup cafe')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://youtu.be/vOt4HmL36gg',
+                                        title: e.$i18n.t('heroes.media.founderCryptocurrencyInterview'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.webDollarAlexandruBudisteanu'),
+                                            title: e.$i18n.t('heroes.media.webDollarAlexandruBudisteanu'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-budisteanu-kanal33.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.interviewWithBudisteanu')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Kanal 33')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://medium.com/@adrianmihaistratulat/why-webdollar-can-be-everything-that-bitcoin-failed-to-be-49ad5c7d51ed',
+                                        title: e.$i18n.t('heroes.media.bitcoinAlternative'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.bitcoinAlternative'),
+                                            title: e.$i18n.t('heroes.media.bitcoinAlternative'),
+                                            src: '/public/assets/images/media/medium1.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.whyWebDollarCanBeEverythingBitcoinFailedToBe')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Medium')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://medium.com/@adrianmihaistratulat/not-another-ico-56cd4c6fe0c4',
+                                        rel: 'noopener',
+                                        title: e.$i18n.t('heroes.media.cryptocurrencyWithoutICO'),
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.cryptocurrencyWithoutICO'),
+                                            title: e.$i18n.t('heroes.media.cryptocurrencyWithoutICO'),
+                                            src: '/public/assets/images/media/icofail.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.whyWebDollarWillNotHaveAnICO')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Medium')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://medium.com/@adrianmihaistratulat/how-webdollar-will-reinvent-mining-aafde32d943',
+                                        rel: 'noopener',
+                                        title: e.$i18n.t('heroes.media.reinventingCryptocurrencyMining'),
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.reinventingCryptocurrencyMining'),
+                                            title: e.$i18n.t('heroes.media.reinventingCryptocurrencyMining'),
+                                            src: '/public/assets/images/media/mining.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.howWebDollarIsReinventingMining')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Medium')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: '',
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: 'community meetup',
+                                            title: 'community meetup',
+                                            src: '/public/assets/images/media/meetup.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.firstWebDollarCommunityMeetup')))]),
+                                    e._v(' '),
+                                    a('span', [e._v(e._s(e.$i18n.t('heroes.media.romaniaBucharest')))])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://www.facebook.com/webdollar.io/videos/127222761332489/',
+                                        rel: 'noopener',
+                                        title: e.$i18n.t('heroes.media.videoTechnicalPresentation'),
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.videoTechnicalPresentation'),
+                                            title: e.$i18n.t('heroes.media.videoTechnicalPresentation'),
+                                            src: '/public/assets/images/media/techhub.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.videoTechnicalPresentation')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Javascript Bucharest TechHub')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://medium.com/@adrianmihaistratulat/get-ready-for-the-pool-party-d497049c6db4',
+                                        rel: 'noopener',
+                                        title: e.$i18n.t('heroes.media.poolMining'),
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.poolMining'),
+                                            title: e.$i18n.t('heroes.media.poolMining'),
+                                            src: '/public/assets/images/media/poolparty.jpeg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.getReadyForThePoolParty')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Medium')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://youtu.be/oPP-b4cFFqw',
+                                        title: e.$i18n.t('heroes.media.alexandruPanaitAppearanceOnTVAntena3'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.alexandruPanaitAppearanceOnTVAntena3'),
+                                            title: e.$i18n.t('heroes.media.alexandruPanaitAppearanceOnTVAntena3'),
+                                            src: '/public/assets/images/media/webdollar-alexandru-panait-antena3.jpg'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.firstRomanianCryptocurrency')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('Antena 3')])
+                                ])]),
+                            e._v(' '),
+                            a('div', { staticClass: 'mediaContentBox' }, [a('a', {
+                                    attrs: {
+                                        href: 'https://aipss.ro/digitalizarea-romaniei/',
+                                        title: e.$i18n.t('heroes.media.romanianDigitization'),
+                                        rel: 'noopener',
+                                        target: '_blank'
+                                    }
+                                }, [
+                                    a('img', {
+                                        attrs: {
+                                            alt: e.$i18n.t('heroes.media.alexandruPanait'),
+                                            title: e.$i18n.t('heroes.media.alexandruPanait'),
+                                            src: 'https://aipss.ro/wp-content/uploads/2020/03/AIPSS_Bluegreen2.png'
+                                        }
+                                    }),
+                                    e._v(' '),
+                                    a('h3', [e._v(e._s(e.$i18n.t('heroes.media.romanianDigitization')))]),
+                                    e._v(' '),
+                                    a('span', [e._v('AIPSS')])
+                                ])])
+                        ])
+                    ]);
+                }, [], !1, null, null, null).exports, s = {
+                    name: 'partner-page',
+                    components: {
+                        layout: i.Z,
+                        'media-hero': r
+                    }
+                }, o = (0, n.Z)(s, function () {
+                    var e = this.$createElement, t = this._self._c || e;
+                    return t('layout', [t('div', {
+                            attrs: { slot: 'content' },
+                            slot: 'content'
+                        }, [t('media-hero')], 1)]);
+                }, [], !1, null, null, null).exports;
+        }
+    }
+]);

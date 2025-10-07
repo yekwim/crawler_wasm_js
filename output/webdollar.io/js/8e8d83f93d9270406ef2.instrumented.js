@@ -1,0 +1,587 @@
+window.__instrumentation__ = {
+    capturedCalls: [],
+    performanceMetrics: new Map(),
+    capture: function (type, callId, timestamp) {
+        this.capturedCalls.push({
+            type: type,
+            id: callId,
+            timestamp: timestamp,
+            performanceTime: performance.now()
+        });
+        if (!this.performanceMetrics.has(type)) {
+            this.performanceMetrics.set(type, []);
+        }
+        this.performanceMetrics.get(type).push(performance.now());
+        console.log(`[INSTRUMENTATION] ${ type } call captured: ${ callId }`);
+    },
+    getMetrics: function () {
+        const metrics = {};
+        for (const [type, times] of this.performanceMetrics) {
+            metrics[type] = {
+                count: times.length,
+                avgTime: times.reduce((a, b) => a + b, 0) / times.length,
+                minTime: Math.min(...times),
+                maxTime: Math.max(...times)
+            };
+        }
+        return metrics;
+    },
+    getCapturedCalls: function () {
+        return this.capturedCalls;
+    }
+};
+'use strict';
+(self.webpackChunk_webdollar_front_webdollar = self.webpackChunk_webdollar_front_webdollar || []).push([
+    [680],
+    {
+        8424: function (e, t, a) {
+            a.d(t, {
+                Z: function () {
+                    return s;
+                }
+            });
+            var i = { name: 'FooterLayout' }, s = (0, a(1900).Z)(i, function () {
+                    var e = this, t = e.$createElement, a = e._self._c || t;
+                    return a('div', { attrs: { id: 'footer' } }, [a('div', { attrs: { id: 'footerSection' } }, [a('div', { staticClass: 'textContainer sectionCenteredWidth' }, [
+                                a('div', { staticClass: 'footerContainer' }, [
+                                    a('div', [
+                                        a('h2', [e._v(e._s(e.$i18n.t('layout.footer.followUs')))]),
+                                        e._v(' '),
+                                        e._m(0)
+                                    ]),
+                                    e._v(' '),
+                                    a('div', [
+                                        a('h2', [e._v(e._s(e.$i18n.t('layout.footer.poweredBy')))]),
+                                        e._v(' '),
+                                        e._m(1),
+                                        e._v(' '),
+                                        e._m(2)
+                                    ])
+                                ]),
+                                e._v(' '),
+                                a('div', { staticClass: 'newCryptoText' }, [e._v(e._s(e.$i18n.t('layout.footer.footer')))])
+                            ])])]);
+                }, [
+                    function () {
+                        var e = this, t = e.$createElement, a = e._self._c || t;
+                        return a('div', { staticClass: 'footerItem followUsLinks' }, [
+                            a('a', {
+                                staticClass: 'linkIconSocial',
+                                attrs: {
+                                    href: 'https://facebook.com/webdollar.io',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/facebook_white.png',
+                                        alt: 'Facebook WebDollar',
+                                        title: 'Facebook CryptoCurrency WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/facebook_yellow.png',
+                                        alt: 'Facebook WebDollar',
+                                        title: 'Facebook CryptoCurrency WebDollar'
+                                    }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'linkIconSocial',
+                                attrs: {
+                                    href: 'https://twitter.com/webdollar_io',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/twitter_white.png',
+                                        alt: 'Twitter WebDollar',
+                                        title: 'Twitter WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/twitter_yellow.png',
+                                        alt: 'Twitter WebDollar',
+                                        title: 'Twitter WebDollar'
+                                    }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'linkIconSocial',
+                                attrs: {
+                                    href: 'https://t.me/WebDollar',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/telegram_white.png',
+                                        alt: 'Telegram WebDollar',
+                                        title: 'Telegram WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/telegram_yellow.png',
+                                        alt: 'Telegram WebDollar',
+                                        title: 'Telegram WebDollar'
+                                    }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'linkIconSocial lazy',
+                                attrs: {
+                                    href: 'https://www.reddit.com/r/webdollar/',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/reddit_white.png',
+                                        alt: 'Reddit WebDollar',
+                                        title: 'Reddit WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/reddit_yellow.png',
+                                        alt: 'Reddit WebDollar',
+                                        title: 'Reddit WebDollar'
+                                    }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'linkIconSocial',
+                                attrs: {
+                                    href: 'https://medium.com/@webdollar',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/medium_white.png',
+                                        alt: 'Medium WebDollar',
+                                        title: 'Medium WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/medium_yellow.png',
+                                        alt: 'Medium WebDollar',
+                                        title: 'Medium WebDollar'
+                                    }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'linkIconSocial',
+                                attrs: {
+                                    href: 'https://shang.qq.com/wpa/qunwpa?idkey=7021906277b183cdedb6567ea96d2170cef9b24b8bba09807570b0b5bf04da43',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'linkIconSocialNormal lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/qq_white.png',
+                                        alt: 'QQ WebDollar',
+                                        title: 'QQ WebDollar'
+                                    }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'linkIconSocialHover lazy',
+                                    attrs: {
+                                        'data-src': '/public/assets/images/SocialMedia/qq_yellow.png',
+                                        alt: 'QQ WebDollar',
+                                        title: 'QQ WebDollar'
+                                    }
+                                })
+                            ])
+                        ]);
+                    },
+                    function () {
+                        var e = this, t = e.$createElement, a = e._self._c || t;
+                        return a('div', { staticClass: 'footerItem' }, [
+                            a('a', {
+                                attrs: {
+                                    href: 'http://bit-technologies.net',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [a('img', {
+                                    staticClass: 'footer-poweredBy',
+                                    attrs: {
+                                        src: '/public/assets/images/poweredby/BIT-TECHNOLOGIES-RO-SRL-Logo.png',
+                                        alt: 'bit-technologies'
+                                    }
+                                })]),
+                            e._v(' '),
+                            a('span', { staticClass: 'newCryptoText' }, [e._v('BitTechnologies')])
+                        ]);
+                    },
+                    function () {
+                        var e = this, t = e.$createElement, a = e._self._c || t;
+                        return a('div', { staticClass: 'footerItem' }, [
+                            a('a', {
+                                attrs: {
+                                    href: 'https://aipss.ro',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [a('img', {
+                                    staticClass: 'footer-poweredBy',
+                                    attrs: {
+                                        src: '/public/assets/images/poweredby/aipss-white-logo-2-1.png',
+                                        alt: 'aipss'
+                                    }
+                                })]),
+                            e._v(' '),
+                            a('span', { staticClass: 'newCryptoText' }, [e._v('AIPSS')])
+                        ]);
+                    }
+                ], !1, null, null, null).exports;
+        },
+        5392: function (e, t, a) {
+            a.d(t, {
+                Z: function () {
+                    return n;
+                }
+            });
+            var i = {
+                    data: function () {
+                        return {
+                            languages: {
+                                en: {
+                                    short: 'en',
+                                    text: 'English'
+                                },
+                                ro: {
+                                    short: 'ro',
+                                    text: 'Română'
+                                },
+                                it: {
+                                    short: 'it',
+                                    text: 'Italiano'
+                                },
+                                es: {
+                                    short: 'es',
+                                    text: 'Español'
+                                },
+                                de: {
+                                    short: 'de',
+                                    text: 'Deutsch'
+                                },
+                                fr: {
+                                    short: 'fr',
+                                    text: 'Français'
+                                }
+                            }
+                        };
+                    },
+                    computed: {
+                        getSelected: function () {
+                            return this.languages[this.$store.state.settings.language];
+                        }
+                    },
+                    methods: {
+                        selectLanguage: function (e) {
+                            this.$store.dispatch('localizationStoreSelectedLanguage', { language: e.short });
+                        }
+                    }
+                }, s = a(1900), l = {
+                    name: 'HeaderLayout',
+                    components: {
+                        LanguageSelect: (0, s.Z)(i, function () {
+                            var e = this, t = e.$createElement, a = e._self._c || t;
+                            return a('div', { staticClass: 'language-select' }, [a('div', { staticClass: 'sl-nav' }, [a('ul', [a('li', [
+                                            a('i', { class: 'sl-flag flag-' + e.getSelected.short }),
+                                            e._v(' '),
+                                            a('b', [e._v(e._s(e.getSelected.text))]),
+                                            e._v(' '),
+                                            a('div', { staticClass: 'triangle' }),
+                                            e._v(' '),
+                                            a('ul', e._l(e.languages, function (t, i) {
+                                                return a('li', {
+                                                    key: i,
+                                                    on: {
+                                                        click: function (a) {
+                                                            return e.selectLanguage(t);
+                                                        }
+                                                    }
+                                                }, [
+                                                    a('i', { class: 'sl-flag flag flag-' + t.short }),
+                                                    e._v(' '),
+                                                    a('span', { staticClass: 'active' }, [e._v(e._s(t.text))])
+                                                ]);
+                                            }), 0)
+                                        ])])])]);
+                        }, [], !1, null, '2fe4cae4', null).exports
+                    },
+                    data: function () {
+                        return {
+                            screenWidth: 0,
+                            alertsHeight: 0,
+                            mobileMenuOpened: !1,
+                            isMobile: !1,
+                            alerts: [
+                                { message: 'test text' },
+                                { message: 'test text 2' }
+                            ]
+                        };
+                    },
+                    methods: {
+                        collapseMenuBack: function () {
+                            this.$refs.header.style.zIndex = 10, this.mobileMenuOpened = !1;
+                        },
+                        handleToggleDark: function () {
+                            this.$store.commit('setDark', !this.$store.state.settings.dark);
+                        },
+                        showMobileMenu: function () {
+                            this.$refs.header.style.zIndex = 20, this.mobileMenuOpened = !0;
+                        },
+                        verifyIfIsMobile: function () {
+                            this.screenWidth < 768 ? this.isMobile = !0 : this.isMobile = !1;
+                        },
+                        addEvent: function (e, t, a) {
+                            null != e && (e.addEventListener ? e.addEventListener(t, a, !1) : e.attachEvent ? e.attachEvent('on' + t, a) : e['on' + t] = a);
+                        }
+                    },
+                    mounted: function () {
+                        var e = this;
+                        'undefined' != typeof window && (this.addEvent(window, 'resize', function (t) {
+                            e.screenWidth = window.innerWidth, e.verifyIfIsMobile();
+                        }), this.addEvent(window, 'scroll', function (t) {
+                            1 == e.mobileMenuOpened && e.collapseMenuBack();
+                        }), this.screenWidth = window.innerWidth, this.verifyIfIsMobile());
+                    }
+                }, n = (0, s.Z)(l, function () {
+                    var e = this, t = e.$createElement, a = e._self._c || t;
+                    return a('div', {
+                        ref: 'header',
+                        style: { marginTop: this.alertsHeight },
+                        attrs: { id: 'header' }
+                    }, [
+                        a('div', {
+                            staticClass: 'topnav',
+                            attrs: { id: 'menu' }
+                        }, [
+                            a('router-link', {
+                                staticClass: 'logoMenu',
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: {
+                                    to: '/#mainSection',
+                                    id: 'logoBox'
+                                }
+                            }, [
+                                a('img', {
+                                    staticClass: 'darkTheme',
+                                    attrs: {
+                                        src: '/public/assets/images/WebDollar-logo-white.png',
+                                        alt: e.$i18n.t('global.currencyOfTheInternet'),
+                                        id: 'logo',
+                                        title: e.$i18n.t('global.currencyOfTheInternet')
+                                    },
+                                    on: { click: this.collapseMenuBack }
+                                }),
+                                e._v(' '),
+                                a('img', {
+                                    staticClass: 'lightTheme',
+                                    attrs: {
+                                        src: '/public/assets/images/WebDollar-logo-black.png',
+                                        alt: e.$i18n.t('global.currencyOfTheInternet'),
+                                        id: 'logo',
+                                        title: e.$i18n.t('global.currencyOfTheInternet')
+                                    },
+                                    on: { click: this.collapseMenuBack }
+                                })
+                            ]),
+                            e._v(' '),
+                            a('a', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { href: 'javascript:void(0);' },
+                                on: { click: this.handleToggleDark }
+                            }, [a('div', [a('span', {
+                                        class: 'fas fa-' + (e.$store.state.settings.dark ? 'sun' : 'moon') + ' nav-item-icon ',
+                                        attrs: { title: e.$i18n.t('layout.navbar.switchTheme') }
+                                    })])]),
+                            e._v(' '),
+                            a('a', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: {
+                                    href: 'javascript:void(0);',
+                                    id: 'language'
+                                }
+                            }, [a('language-select', { staticClass: 'nav-link' })], 1),
+                            e._v(' '),
+                            a('a', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: {
+                                    href: 'https://webdollar.network/',
+                                    rel: 'noopener',
+                                    target: '_blank'
+                                }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.explorer')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/partners/businesses' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.partners')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/partners/exchanges' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.exchanges')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/faq' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.faq')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/media' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.media')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: this.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/#community' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.community')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: e.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/#coinDistributionSection' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.network')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: e.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/#get-started' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.getStarted')))])]),
+                            e._v(' '),
+                            a('router-link', {
+                                class: e.mobileMenuOpened && this.isMobile ? 'openedMenuLink' : '',
+                                attrs: { to: '/#what-is-WebDollar' }
+                            }, [a('div', { on: { click: this.collapseMenuBack } }, [e._v(e._s(e.$i18n.t('layout.navbar.about')))])]),
+                            e._v(' '),
+                            a('a', {
+                                staticClass: 'icon showMenu',
+                                class: e.mobileMenuOpened ? 'openedMenuLink' : '',
+                                staticStyle: { 'font-size': '15px' },
+                                style: { display: e.mobileMenuOpened || 0 == e.isMobile ? 'none' : 'block' },
+                                attrs: { href: 'javascript:void(0);' },
+                                on: { click: this.showMobileMenu }
+                            }, [e._v('\u2630')])
+                        ], 1),
+                        e._v(' '),
+                        a('div', { attrs: { id: 'WebDollarAlertsStickyBar' } })
+                    ]);
+                }, [], !1, null, null, null).exports;
+        },
+        6680: function (e, t, a) {
+            a.d(t, {
+                Z: function () {
+                    return n;
+                }
+            });
+            var i = a(5392), s = a(8424), l = {
+                    name: 'Layout',
+                    components: {
+                        HeaderLayout: i.Z,
+                        FooterLayout: s.Z
+                    },
+                    computed: {
+                        screenHeight: function () {
+                            return this.$store.state.global.screenHeight;
+                        },
+                        screenWidth: function () {
+                            return this.$store.state.global.screenWidth;
+                        }
+                    },
+                    mounted: function () {
+                        var e = this;
+                        'undefined' != typeof window && (this.$store.dispatch('GLOBAL_SCREEN', {
+                            screenHeight: window.innerHeight,
+                            screenWidth: window.innerWidth
+                        }), this.changeFullSectionHeight(), document.body.style.backgroundColor = '#000', this.fullHeightSectionOnMobile(document.getElementById('aboutSection'), 768), this.addEvent(window, 'resize', function (t) {
+                            e.$store.state.global.screenWidth != window.innerWidth && (e.$store.dispatch('GLOBAL_SCREEN', {
+                                screenHeight: window.innerHeight,
+                                screenWidth: window.innerWidth
+                            }), e.changeFullSectionHeight());
+                        }));
+                    },
+                    methods: {
+                        changeFullSectionHeight: function () {
+                            for (var e = document.getElementsByClassName('fullSection'), t = this.screenHeight - 70, a = 0; a < e.length; a++)
+                                e[a].style.height = t + 'px';
+                            this.fullHeightSectionOnMobile(document.getElementById('aboutSection'), 768);
+                        },
+                        fullHeightSectionOnMobile: function (e, t) {
+                            null != e && (this.screenWidth <= t ? (e.firstChild.className += ' fullHeight', e.setAttribute('style', 'height:auto !important')) : e.firstChild.className = e.firstChild.className.replace('fullHeight', ''));
+                        },
+                        addEvent: function (e, t, a) {
+                            null != e && (e.addEventListener ? e.addEventListener(t, a, !1) : e.attachEvent ? e.attachEvent('on' + t, a) : e['on' + t] = a);
+                        }
+                    }
+                }, n = (0, a(1900).Z)(l, function () {
+                    var e = this, t = e.$createElement, a = e._self._c || t;
+                    return a('div', { staticStyle: { 'overflow-y': 'auto' } }, [
+                        a('HeaderLayout'),
+                        e._v(' '),
+                        e._m(0),
+                        e._v(' '),
+                        a('div', { attrs: { id: 'websiteBody' } }, [
+                            a('div', { attrs: { id: 'WebDollarAlertsStickyBar' } }),
+                            e._v(' '),
+                            e._t('content')
+                        ], 2),
+                        e._v(' '),
+                        a('FooterLayout')
+                    ], 1);
+                }, [function () {
+                        var e = this.$createElement, t = this._self._c || e;
+                        return t('div', { staticClass: 'backgroundVideoWrap' }, [t('video', {
+                                staticClass: 'backgroundVideo',
+                                attrs: {
+                                    autoplay: '',
+                                    loop: ''
+                                }
+                            }, [t('source', {
+                                    attrs: {
+                                        src: '/public/assets/video/file.mp4',
+                                        type: 'video/mp4'
+                                    }
+                                })])]);
+                    }], !1, null, null, null).exports;
+        }
+    }
+]);
+__instrumentation__.capture('WebSocket', 'call_1759369820698_9x94kv7eu', 1759369820698);
+__instrumentation__.capture('WebSocket', 'call_1759369820699_gapclyesz', 1759369820699);
